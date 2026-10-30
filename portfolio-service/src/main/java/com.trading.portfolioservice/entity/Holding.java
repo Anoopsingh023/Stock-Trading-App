@@ -1,4 +1,4 @@
-package entity;
+package com.trading.portfolioservice.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

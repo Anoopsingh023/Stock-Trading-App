@@ -1,9 +1,9 @@
-package controller;
+package com.trading.portfolioservice.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.PortfolioService;
+import com.trading.portfolioservice.service.PortfolioService;
 
 import java.util.Map;
 

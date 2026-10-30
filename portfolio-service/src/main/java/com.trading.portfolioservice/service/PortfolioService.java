@@ -1,11 +1,11 @@
-package service;
+package com.trading.portfolioservice.service;
 
-import client.MarketDataClient;
-import entity.Holding;
+import com.trading.portfolioservice.client.MarketDataClient;
+import com.trading.portfolioservice.entity.Holding;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import repository.HoldingRepository;
+import com.trading.portfolioservice.repository.HoldingRepository;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

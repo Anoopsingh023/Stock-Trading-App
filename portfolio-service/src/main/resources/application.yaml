@@ -1,3 +1,57 @@
 spring:
   application:
     name: portfolio-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/portfolio_db?createDatabaseIfNotExist=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  kafka:
+    bootstrap-servers:
+      - localhost:9092
+    consumer:
+      group-id: portfolio-service-group
+      auto-offset-reset: earliest
+      key-deserializer: org.appache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.jsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              package: "*"
+            use:
+              type:
+                header: false
+            value:
+              default:
+                type: java.util.HashMap
+
+
+server:
+  port: 8084
+
+market:
+  service:
+    url: http://localhost:8082
+
+
+#jwt:
+#  secret:
+#  expiration:
+#  refresh-expiration:
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+
+
